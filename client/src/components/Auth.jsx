@@ -24,7 +24,9 @@ const Auth = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log(form)
+        const { fullName, userName, password, phoneNumber, avatarURL} = form;
+
+        const URL = 'http://localhost:5000';
     }
 
     const switchMode = () => {

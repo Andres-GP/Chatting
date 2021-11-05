@@ -5,8 +5,18 @@ const cors = require('cors');
 const app = express();
 const PORT = process.PORT || 5000;
 
+const authRoutes = require ("./routes/auth.js")
+
 require('dotenv').config();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
+
+app.get('/', (req, res) => {
+    res.send('hello world');
+});
+
+app.use('/auth', authRoutes);
+
+app.listen(PORT, () => console.log(`PUTO server runeanding on port ${PORT}`));
