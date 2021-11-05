@@ -6,7 +6,7 @@ import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
 import HospitalIcon from '../assets/hospital.png';
 import LogoutIcon from '../assets/logout.png';
 
-import ChannelSearch from "../components/ChannelSearch"
+//import ChannelSearch from "../components/ChannelSearch"
 
 const SideBar = () => {
     <div className="channel-list__sidebar">
