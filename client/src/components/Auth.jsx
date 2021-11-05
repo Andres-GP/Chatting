@@ -19,9 +19,13 @@ const Auth = () => {
 
     const handleChange = (e) => {
         setForm({...form, [e.target.name]: e.target.value});
-
-        console.log(form);
     };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log(form)
+    }
 
     const switchMode = () => {
         setIsSignup((prevIsSignUp) => !prevIsSignUp);
@@ -32,7 +36,7 @@ const Auth = () => {
             <div className="auth__form-container_fields">
                 <div className="auth__form-container_fields-content">
                     <p>{isSignup ? 'Sign Up' : 'Sign in'}</p>
-                    <form onSubmit={() => {}}>
+                    <form onSubmit={handleSubmit}>
                         {isSignup && (
                             <div className="auth__form-container_fields-content_input">
                                 <label htmlFor="fullName">Full Name</label>
@@ -95,6 +99,9 @@ const Auth = () => {
                                     required />
                             </div>
                         )}
+                        <div className="auth__form-container_fields-content_button">
+                            <button>{isSignup ? "Sign up" : "Sign in"}</button>
+                        </div>
                     </form>
                     <div className="auth__form-container_fields-account">
                         <p>
