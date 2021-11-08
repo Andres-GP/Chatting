@@ -21,14 +21,13 @@ const authToken = cookies.get("token");
 
 if(authToken) {
     client.connectUset({
-        cookies.set('token', token);
-        cookies.set('username', username);
-        cookies.set('fullName', fullName);
-        cookies.set('userId', userId);
-        cookies.set('phoneNumber', phoneNumber);
-        cookies.set('avatarURL', avatarURL);
-        cookies.set('hashedPassword', hashedPassword);
-    })
+        id: cookies.get('userId'),
+        name: cookies.get('username'),
+        fullName: cookies.get('fullName'),
+        image: cookies.get('avatarURL'),
+        hashedPassword: cookies.get('hashedPassword'),
+        phoneNumber: cookies.get('phoneNumber'),
+    }, authToken)
 }
 
 const App = () => {
