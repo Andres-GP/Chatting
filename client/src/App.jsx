@@ -1,26 +1,28 @@
-import React from 'react'
-import { StreamChat } from 'stream-chat'; 
+
+import React from "react";
+import { StreamChat } from 'stream-chat';
 import { ChannelList, Chat } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 
-//import { ChannelContainer, ChannelListContainer } from './components';
-import ChannelContainer from "./components/ChannelContainer"
-import ChannelListContainer from "./components/ChannelListContainer"
-import ChannelSearch from "./components/ChannelSearch";
-import Auth from "./components/Auth"
+import ChannelListContainer from "./components/ChannelListContainer";
+import ChannelContainer from "./components/ChannelContainer";
+import Auth from "./components/Auth";
 
-import "./App.css"
+//import { ChannelSearch } from "./components/ChannelSearch";
+
+import './App.css';
 
 const cookies = new Cookies();
 
-const apiKey = 'hnavqk4dpab8';
+//import { ChannelListcontainer, ChannelContainer } from './components';
 
-const client = StreamChat.getInstance(apiKey)
+const apiKey = 'wnfxtyv779wf';
+const authToken = cookies.get("token")
 
-const authToken = cookies.get("token");
+const client= StreamChat.getInstance(apiKey)
 
-if(authToken) {
-    client.connectUset({
+if (authToken){
+    client.connectUser({
         id: cookies.get('userId'),
         name: cookies.get('username'),
         fullName: cookies.get('fullName'),
@@ -31,12 +33,18 @@ if(authToken) {
 }
 
 const App = () => {
-    if(!authToken) return <Auth />
+
+    if (!authToken) return <Auth/>
+
     return (
-        <div className="app_wrapper">
+        <div className= "app__wrapper">
             <Chat client={client} theme ="team light">
-                <ChannelListContainer/>
-                <ChannelContainer/>
+                <ChannelListContainer
+                
+                />
+                <ChannelContainer
+                
+                />
             </Chat>
         </div>
     );

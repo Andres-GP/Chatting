@@ -1,7 +1,8 @@
+
 const { sign } = require('crypto');
 const express = require('express');
 
-const { signup, login } = require('../controllers/auth.js');
+const { signup, login} = require ('../controllers/auth.js');
 
 const router = express.Router();
 

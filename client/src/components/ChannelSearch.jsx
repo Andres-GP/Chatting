@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { useChatContext } from "stream-chat-react";
 
 import {SearchIcon} from '../assets';
@@ -9,34 +9,36 @@ const ChannelSearch = () => {
 
     const getChannels = async (text) => {
         try {
-          //TODO fetch channels  
+            // TODO: fetch channels
         } catch (error) {
             setQuery('')
         }
     }
 
-    const onSearch = (event) => {
+    const Onsearch = (event) => {
         event.preventDefault();
 
         setLoading(true);
         setQuery(event.target.value);
-        getChannels(event.target.value)
+        getChannels(event.target.value);
     }
 
     return (
         <div className="channel-search__container">
             <div className="channel-search__input__wrapper">
                 <div className="channel-search__input__icon">
-                    <SearchIcon />
+                    <SearchIcon/>
                 </div>
-                <input className="channel-search__input__text" 
-                placeholder="search" 
-                type="text" 
-                value={query} 
-                onChange={onSearch}/>
+                <input 
+                    className="channel-search__input__text" 
+                    placeholder="Search" 
+                    type="text" 
+                    value={query} 
+                    onChange ={Onsearch}
+                    />
             </div>
         </div>
-    );
+    )
 }
 
 export default ChannelSearch;
