@@ -8,6 +8,8 @@ import ChannelListContainer from "./components/ChannelListContainer";
 import ChannelContainer from "./components/ChannelContainer";
 import Auth from "./components/Auth";
 
+
+//import { ChannelListcontainer, ChannelContainer, Auth } from './components';
 //import { ChannelSearch } from "./components/ChannelSearch";
 
 import 'stream-chat-react/dist/css/index.css';
@@ -15,10 +17,8 @@ import './App.css';
 
 const cookies = new Cookies();
 
-//import { ChannelListcontainer, ChannelContainer } from './components';
-
 const apiKey = 'hnavqk4dpab8';
-const authToken = cookies.get("token")
+const authToken = cookies.get("token");
 
 const client= StreamChat.getInstance(apiKey)
 
@@ -44,18 +44,17 @@ const App = () => {
         <div className= "app__wrapper">
             <Chat client={client} theme ="team light">
                 <ChannelListContainer
-                    isCreating={isCreating}
-                    setIsCreating={setIsCreating}
-                    setCreateType={setCreateType}
-                    setIsEditing={setIsEditing}
+                    isCreating = {isCreating}
+                    setIsCreating = {setIsCreating}
+                    setCreateType = {setCreateType}
+                    setIsEditing = {setIsEditing}
                 />
                 <ChannelContainer
-                    isCreating={isCreating}
-                    setIsCreating={setIsCreating}
-                    isEditing={isEditing}
-                    setIsEditing={setIsEditing}
-                    createType={createType}
-                
+                    isCreating = {isCreating}
+                    setIsCreating = {setIsCreating}
+                    isEditing = {isEditing}
+                    setIsEditing = {setIsEditing}
+                    createType = {createType}
                 />
             </Chat>
         </div>
