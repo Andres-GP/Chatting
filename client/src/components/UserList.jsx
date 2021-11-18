@@ -16,11 +16,11 @@ const ListContainer = ({ children }) => {
     )
 }
 
-const UserItem = () => {
+const UserItem = ({ user }) => {
     return(
         <div className="user-item__wrapper">
             <div className="user-item__name-wrapper">
-                <Avatar  />
+                <Avatar image={user.image} name={user.fullName || user.id} size={32} />
             </div>
         </div>
 
